@@ -16,8 +16,6 @@
 #include "Graph.h"
 #include "Shape.h"
 
-#include "UnfoldSolution.h"
-
 //prototypes
 template<class RandomIt>
 void random_shuffle(RandomIt first, RandomIt last);

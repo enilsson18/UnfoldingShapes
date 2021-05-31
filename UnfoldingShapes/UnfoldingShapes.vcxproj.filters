@@ -90,9 +90,6 @@
     <ClInclude Include="Unfold.h">
       <Filter>Source Files\Unfold</Filter>
     </ClInclude>
-    <ClInclude Include="UnfoldSolution.h">
-      <Filter>Source Files\Unfold</Filter>
-    </ClInclude>
     <ClInclude Include="Runner.h">
       <Filter>Source Files\Unfold</Filter>
     </ClInclude>

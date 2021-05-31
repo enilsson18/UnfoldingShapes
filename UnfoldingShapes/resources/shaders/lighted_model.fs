@@ -28,12 +28,10 @@ uniform vec3 viewPos;
 uniform bool hasDiffuseTex = false;
 uniform bool hasSpecularTex = false;
 uniform bool hasNormalTex = false;
-uniform bool hasHeightTex = false;
 
 uniform sampler2D texture_diffuse1;
 uniform sampler2D texture_specular1;
 uniform sampler2D texture_normal1;
-uniform sampler2D texture_height1;
 
 //lighting info
 uniform vec3 diffuse_color = vec3(1.0,1.0,1.0);

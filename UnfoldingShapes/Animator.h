@@ -18,7 +18,6 @@
 
 #include "Face.h"
 #include "Graph.h"
-#include "UnfoldSolution.h"
 #include "Unfold.h"
 
 class Animator {

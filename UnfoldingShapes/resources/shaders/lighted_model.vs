@@ -12,12 +12,24 @@ uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;
 
+uniform bool hasHeightTex = false;
+uniform sampler2D texture_height1;
+
+float height_multiplier = 0.1f;
+
 void main()
 {
     TexCoords = aTexCoords;    
-    gl_Position = projection * view * model * vec4(aPos, 1.0);
 
     Normal = transpose(inverse(mat3(model))) * aNormal;
 
-    FragPos = vec3(model * vec4(aPos, 1.0));
+    vec4 heightTexture = vec4(0.0);
+    if (hasHeightTex){
+        heightTexture = texture(texture_height1, aTexCoords);
+    }
+
+    vec3 position = aPos + Normal * (height_multiplier * (heightTexture.x + heightTexture.y + heightTexture.z) / 3.0);
+    gl_Position = projection * view * model * vec4(position, 1.0);
+
+    FragPos = vec3(model * vec4(position, 1.0));
 }

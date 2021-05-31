@@ -119,7 +119,6 @@
     <ClInclude Include="Skybox.h" />
     <ClInclude Include="TextManager.h" />
     <ClInclude Include="Unfold.h" />
-    <ClInclude Include="UnfoldSolution.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

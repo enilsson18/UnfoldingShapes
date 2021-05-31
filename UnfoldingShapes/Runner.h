@@ -28,7 +28,6 @@
 
 // Unfold tools
 #include "Shape.h"
-#include "UnfoldSolution.h"
 #include "Unfold.h"
 #include "Animator.h"
 
