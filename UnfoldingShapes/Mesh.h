@@ -128,12 +128,12 @@ public:
 					shader.setBool("hasSpecularTex", true);
 				}
 				else if (name == "texture_normal") {
-					std::cout << "has normal" << std::endl;
+					// std::cout << "has normal" << std::endl;
 					number = std::to_string(normalNr++); //transfer unsigned int to stream
 					shader.setBool("hasNormalTex", true);
 				}
 				else if (name == "texture_height") {
-					std::cout << "has height" << std::endl;
+					//std::cout << "has height" << std::endl;
 					number = std::to_string(heightNr++); //transfer unsigned int to stream
 					shader.setBool("hasHeightTex", true);
 				}
