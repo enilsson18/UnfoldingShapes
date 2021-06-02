@@ -16,6 +16,8 @@ When cloning the repo and opening the visual studios project file, you must foll
 
 5. Click through the remaining prompts and then click Install.
 
-6. Open Visual Studios 2017 and set the runtime versions to RELEASE and x64.
+6. Open Visual Studios 2017 and install the [Qt Visual Studio tools extension](https://doc.qt.io/qtvstools/qtvstools-getting-started.html#:~:text=one%20Qt%20version.-,Installing%20Qt%20VS%20Tools,or%20update%20Qt%20VS%20Tools.)
 
-7. Attempt to build the code once and then copy the contents of "/LibResources/runtime bin" from the cloned repo into "/x64/Release"
+7. Set the runtime versions to RELEASE and x64.
+
+8. Attempt to build the code once and then copy the contents of "/LibResources/runtime bin" from the cloned repo into "/x64/Release"

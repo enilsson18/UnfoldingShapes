@@ -15,6 +15,7 @@
 #include "Face.h"
 #include "Graph.h"
 #include "Shape.h"
+#include "Axis.h"
 
 //prototypes
 template<class RandomIt>
@@ -272,7 +273,7 @@ public:
 			current = queue[z];
 
 			// find axis
-			Face::Axis* axis = nullptr;
+			Axis<Face>* axis = nullptr;
 
 			for (int i = 0; i < current->connections.size(); i++) {
 				for (int x = 0; x < current->data->axis.size(); x++) {
@@ -300,7 +301,7 @@ public:
 		current = queue[floor(progress / miniProgress)];
 
 		// find axis
-		Face::Axis* axis = nullptr;
+		Axis<Face>* axis = nullptr;
 
 		for (int i = 0; i < current->connections.size(); i++) {
 			for (int x = 0; x < current->data->axis.size(); x++) {
@@ -351,7 +352,7 @@ public:
 				facesVisited += 1;
 
 				// find axis
-				Face::Axis* axis = nullptr;
+				Axis<Face>* axis = nullptr;
 
 				for (int x = 0; x < current->data->axis.size(); x++) {
 					if (current->data->axis[x]->neighborFace == current->connections[i]->data) {

@@ -54,9 +54,6 @@
     <ClInclude Include="Camera.h">
       <Filter>Source Files\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="GraphicsEngine.h">
-      <Filter>Source Files\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="Light.h">
       <Filter>Source Files\Graphics</Filter>
     </ClInclude>
@@ -94,7 +91,10 @@
       <Filter>Source Files\Unfold</Filter>
     </ClInclude>
     <ClInclude Include="OpenGLWidget.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Axis.h">
+      <Filter>Source Files\Unfold</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

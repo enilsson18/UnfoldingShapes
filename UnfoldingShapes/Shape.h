@@ -19,6 +19,7 @@
 
 #include "Face.h"
 #include "Graph.h"
+#include "Axis.h"
 
 #include "OpenGLWidget.h"
 
@@ -28,11 +29,11 @@ class Shape {
 public:
 	struct Transformation {
 		float deltaAngle;
-		Face::Axis axis;
+		Axis<Face> axis;
 
 		vector<Face*> appliedFaces;
 
-		Transformation(float deltaAngle, Face::Axis* axis, Face* appliedFace) {
+		Transformation(float deltaAngle, Axis<Face>* axis, Face* appliedFace) {
 			this->deltaAngle = deltaAngle;
 			this->axis = *axis;
 
@@ -41,7 +42,7 @@ public:
 			this->appliedFaces.push_back(appliedFace);
 		}
 
-		Transformation(float deltaAngle, Face::Axis* axis, vector<Face*> appliedFaces = vector<Face*>()) {
+		Transformation(float deltaAngle, Axis<Face>* axis, vector<Face*> appliedFaces = vector<Face*>()) {
 			this->deltaAngle = deltaAngle;
 			this->axis = *axis;
 			this->appliedFaces = appliedFaces;
@@ -123,7 +124,7 @@ public:
 	}
 
 	// add transformation to the shape
-	void transform(float deltaAngle, Face::Axis* axis, vector<Face*> appliedFaces) {
+	void transform(float deltaAngle, Axis<Face>* axis, vector<Face*> appliedFaces) {
 		appliedTransformations.push_back(Transformation(deltaAngle, axis, appliedFaces));
 		appliedTransformations[appliedTransformations.size() - 1].apply();
 	}
@@ -252,7 +253,7 @@ private:
 
 		glm::vec3 pos = faceMap.rootNode->data->mesh->getAvgPos();
 
-		Face::Axis* axis = new Face::Axis(line * -1.0f, line * 1.0f);
+		Axis<Face>* axis = new Axis<Face>(line * -1.0f, line * 1.0f);
 
 		float deltaAngle = axis->orientedAngle(pos, glm::vec3(0, -1, 0));
 

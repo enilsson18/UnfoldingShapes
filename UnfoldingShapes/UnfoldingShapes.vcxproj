@@ -105,10 +105,10 @@
   <ItemGroup>
     <ClInclude Include="Animator.h" />
     <ClInclude Include="Asset.h" />
+    <ClInclude Include="Axis.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="Face.h" />
     <ClInclude Include="Graph.h" />
-    <ClInclude Include="GraphicsEngine.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Model.h" />
