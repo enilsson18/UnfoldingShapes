@@ -153,24 +153,7 @@ private:
 	void populateFaceMap(Graph<Face>::Node* node, vector<Face*> &faces) {
 		vector<Face*> tempFaces = vector<Face*>();
 
-		// std::cout << "faces size: " << faces.size() << std::endl;
-		for (int i = 0; i < faces.size(); i++) {
-			for (int g = 0; g < faces[i]->axis.size(); g++) {
-				for (int h = 0; h < node->data->axis.size(); h++) {
-					//std::cout << glm::to_string(node->data->axis[g]->line) << " " << glm::to_string(node->data->axis[g]->point) << std::endl;
-					//std::cout << glm::to_string(node->data->axis[g]->line) << " " << glm::to_string(node->data->axis[g]->point) << std::endl << std::endl;
-					
-					// if the axis match and they are not the same face
-					if (*faces[i]->axis[g] == *node->data->axis[h] && node->data != faces[i]) {
-						// set neighbors of each axis for pairing
-						faces[i]->axis[g]->setNeighbor(node->data, node->data->axis[h]);
-						node->data->axis[h]->setNeighbor(faces[i], faces[i]->axis[g]);
-
-						tempFaces.push_back(faces[i]);
-					}
-				}
-			}
-		}
+		addNeighbors(tempFaces, node, faces);
 
 		// std::cout << tempFaces.size() << std::endl;
 
@@ -187,6 +170,28 @@ private:
 
 			if (exists == false) {
 				populateFaceMap(newNode, faces);
+			}
+		}
+	}
+
+	// set the neighbors for every axis
+	void addNeighbors(vector<Face*> &outputFaces, Graph<Face>::Node* node, vector<Face*> &faces) {
+		// std::cout << "faces size: " << faces.size() << std::endl;
+		for (int i = 0; i < faces.size(); i++) {
+			for (int g = 0; g < faces[i]->axis.size(); g++) {
+				for (int h = 0; h < node->data->axis.size(); h++) {
+					//std::cout << glm::to_string(node->data->axis[g]->line) << " " << glm::to_string(node->data->axis[g]->point) << std::endl;
+					//std::cout << glm::to_string(node->data->axis[g]->line) << " " << glm::to_string(node->data->axis[g]->point) << std::endl << std::endl;
+
+					// if the axis match and they are not the same face
+					if (*faces[i]->axis[g] == *node->data->axis[h] && node->data != faces[i]) {
+						// set neighbors of each axis for pairing
+						faces[i]->axis[g]->setNeighbor(node->data, node->data->axis[h]);
+						node->data->axis[h]->setNeighbor(faces[i], faces[i]->axis[g]);
+
+						outputFaces.push_back(faces[i]);
+					}
+				}
 			}
 		}
 	}

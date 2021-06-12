@@ -42,6 +42,9 @@ public:
 
 		// enable controls
 		ui.openGLWidget->installEventFilter(this);
+
+		// setup properties page
+		ui.propertiesTabWidget->setCurrentIndex(0);
 	}
 
 	OpenGLWidget* getGraphics() {
