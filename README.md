@@ -6,6 +6,10 @@ This project aims to take in 3d models and unwrap them onto a 2d plane in one pi
 
 The project also contains a UI that can manipulate the settings and conditions of the pattern formed by the unfolded shape and can control the animation style of the transformation between the shape and the unfold.
 
+## Note
+
+Due to issues with removing git lfs from the project, some builds were lost. Two integral builds were luckily salvaged so you can see what the current state of the project is and what it started out as.
+
 ## Dependencies
 
 All dependencies other than QT are included within the project files and are compiled statically through lib files. If you want to import the project and its dependencies then please follow the instruction in the section labeled "Importing Project Instructions".
